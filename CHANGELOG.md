@@ -153,10 +153,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 👤 Credits
 
-- **Creator:** [Leo](https://github.com/this-is-the-leo)
-- **Repository:** [OverTheWire Natas Writeup](https://github.com/this-is-the-leo/overthewire-natas)
+- **Creator:** [Leo](https://github.com/here-is-leo)
+- **Repository:** [OverTheWire Natas Writeup](https://github.com/here-is-leo/overthewire-natas)
 - **License:** For Educational Purposes Only
-
 ---
 
 ## 📌 Notes
@@ -319,13 +318,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ۵. یک **Pull Request** باز کنید
 
 ---
-
 ## 👤 اعتبارات
 
-- **سازنده:** [لئو](https://github.com/this-is-the-leo)
-- **مخزن:** [راهنمای ناتاس OverTheWire](https://github.com/this-is-the-leo/overthewire-natas)
+- **سازنده:** [لئو](https://github.com/here-is-leo)
+- **مخزن:** [راهنمای ناتاس OverTheWire](https://github.com/here-is-leo/overthewire-natas)
 - **مجوز:** فقط برای اهداف آموزشی
-
 ---
 
 ## 📌 یادداشت‌ها
