@@ -1,0 +1,239 @@
+natas-writeup/
+│
+├── en-natas/                          # English version
+│   ├── index.html                     # Main landing page (level list + writeup index)
+│   ├── overview.html                  # Project overview & about page
+│   └── Levels/
+│       ├── en-00.html                 # Level 0 -> 1 (View Source)
+│       ├── en-01.html                 # Level 1 -> 2 (Right-click Block)
+│       ├── en-02.html                 # Level 2 -> 3 (Hidden File)
+│       ├── en-03.html                 # Level 3 -> 4 (robots.txt)
+│       ├── en-04.html                 # Level 4 -> 5 (HTTP Referer)
+│       ├── en-05.html                 # Level 5 -> 6 (Cookie Manipulation)
+│       ├── en-06.html                 # Level 6 -> 7 (PHP Include)
+│       ├── en-07.html                 # Level 7 -> 8 (Path Traversal)
+│       ├── en-08.html                 # Level 8 -> 9 (Encoding Bypass)
+│       ├── en-09.html                 # Level 9 -> 10 (Command Injection)
+│       ├── en-10.html                 # Level 10 -> 11 (Command Injection - Filter)
+│       ├── en-11.html                 # Level 11 -> 12 (XOR Encryption)
+│       ├── en-12.html                 # Level 12 -> 13 (File Upload - Client)
+│       ├── en-13.html                 # Level 13 -> 14 (File Upload - Server)
+│       ├── en-14.html                 # Level 14 -> 15 (SQL Injection)
+│       ├── en-15.html                 # Level 15 -> 16 (Blind SQL - Boolean)
+│       ├── en-16.html                 # Level 16 -> 17 (Blind Command Injection)
+│       ├── en-17.html                 # Level 17 -> 18 (Blind SQL - Time-Based)
+│       ├── en-18.html                 # Level 18 -> 19 (Session ID Prediction)
+│       ├── en-19.html                 # Level 19 -> 20 (Session ID Encoding)
+│       ├── en-20.html                 # Level 20 -> 21 (Session Data Injection)
+│       ├── en-21.html                 # Level 21 -> 22 (Cross-Site Session)
+│       ├── en-22.html                 # Level 22 -> 23 (HTTP Header Injection)
+│       ├── en-23.html                 # Level 23 -> 24 (PHP Type Juggling)
+│       ├── en-24.html                 # Level 24 -> 25 (Type Juggling Advanced)
+│       ├── en-25.html                 # Level 25 -> 26 (LFI - Log Poisoning)
+│       ├── en-26.html                 # Level 26 -> 27 (PHP Object Injection)
+│       ├── en-27.html                 # Level 27 -> 28 (SQL Injection - UNION)
+│       ├── en-28.html                 # Level 28 -> 29 (SQL Injection - Stacked)
+│       ├── en-29.html                 # Level 29 -> 30 (Command Injection - Advanced)
+│       ├── en-30.html                 # Level 30 -> 31 (SQL Injection - Filter)
+│       ├── en-31.html                 # Level 31 -> 32 (File Upload - Image)
+│       ├── en-32.html                 # Level 32 -> 33 (XXE - Basic)
+│       ├── en-33.html                 # Level 33 -> 34 (XXE - File Inclusion)
+│       └── en-34.html                 # Level 34 -> 35 (XXE - DTD-Based)
+│
+├── fa-natas/                          # Persian (Farsi) version
+│   ├── index.html                     # Main landing page (Persian)
+│   ├── overview.html                  # Project overview (Persian)
+│   └── Levels/
+│       ├── fa-00.html                 # Level 0 -> 1 (Persian)
+│       ├── fa-01.html                 # Level 1 -> 2 (Persian)
+│       ├── fa-02.html                 # Level 2 -> 3 (Persian)
+│       ├── fa-03.html                 # Level 3 -> 4 (Persian)
+│       ├── fa-04.html                 # Level 4 -> 5 (Persian)
+│       ├── fa-05.html                 # Level 5 -> 6 (Persian)
+│       ├── fa-06.html                 # Level 6 -> 7 (Persian)
+│       ├── fa-07.html                 # Level 7 -> 8 (Persian)
+│       ├── fa-08.html                 # Level 8 -> 9 (Persian)
+│       ├── fa-09.html                 # Level 9 -> 10 (Persian)
+│       ├── fa-10.html                 # Level 10 -> 11 (Persian)
+│       ├── fa-11.html                 # Level 11 -> 12 (Persian)
+│       ├── fa-12.html                 # Level 12 -> 13 (Persian)
+│       ├── fa-13.html                 # Level 13 -> 14 (Persian)
+│       ├── fa-14.html                 # Level 14 -> 15 (Persian)
+│       ├── fa-15.html                 # Level 15 -> 16 (Persian)
+│       ├── fa-16.html                 # Level 16 -> 17 (Persian)
+│       ├── fa-17.html                 # Level 17 -> 18 (Persian)
+│       ├── fa-18.html                 # Level 18 -> 19 (Persian)
+│       ├── fa-19.html                 # Level 19 -> 20 (Persian)
+│       ├── fa-20.html                 # Level 20 -> 21 (Persian)
+│       ├── fa-21.html                 # Level 21 -> 22 (Persian)
+│       ├── fa-22.html                 # Level 22 -> 23 (Persian)
+│       ├── fa-23.html                 # Level 23 -> 24 (Persian)
+│       ├── fa-24.html                 # Level 24 -> 25 (Persian)
+│       ├── fa-25.html                 # Level 25 -> 26 (Persian)
+│       ├── fa-26.html                 # Level 26 -> 27 (Persian)
+│       ├── fa-27.html                 # Level 27 -> 28 (Persian)
+│       ├── fa-28.html                 # Level 28 -> 29 (Persian)
+│       ├── fa-29.html                 # Level 29 -> 30 (Persian)
+│       ├── fa-30.html                 # Level 30 -> 31 (Persian)
+│       ├── fa-31.html                 # Level 31 -> 32 (Persian)
+│       ├── fa-32.html                 # Level 32 -> 33 (Persian)
+│       ├── fa-33.html                 # Level 33 -> 34 (Persian)
+│       └── fa-34.html                 # Level 34 -> 35 (Persian)
+│
+├── Versions/                          # Version history & changelog
+│   ├── v1.0.0.html                    # Initial release
+│   ├── v1.1.0.html                    # Added Persian translation
+│   ├── v1.2.0.html                    # Added overview page
+│   └── CHANGELOG.md                   # Full changelog
+│
+├── assets/                            # Shared assets (optional)
+│   ├── css/
+│   │   └── style.css                  # Shared styles (if extracted)
+│   ├── js/
+│   │   └── main.js                    # Shared JavaScript
+│   └── images/
+│       └── logo.png                   # Project logo
+│
+├── natas-structure.txt                # This structure document
+├── README.md                          # Project README
+└── .gitignore                         # Git ignore file
+
+
+===============================================================================
+FILE PURPOSE BREAKDOWN
+===============================================================================
+
+ROOT DIRECTORY
+--------------
+README.md          : Project overview, setup instructions, and contribution guide
+natas-structure.txt: This structure document for reference
+.gitignore         : Excludes unnecessary files from version control
+
+
+EN-NATAS/ (English Version)
+---------------------------
+index.html    : Main entry point - Displays all 35 levels with difficulty badges,
+                navigation sidebar, progress tracking, and language switcher
+overview.html : Project overview - Explains what Natas is, the project goals,
+                topics covered, and who this is for
+Levels/en-XX.html : Individual level writeups - Each file contains a detailed
+                    walkthrough for a specific level (00-34)
+
+
+FA-NATAS/ (Persian/Farsi Version)
+---------------------------------
+index.html    : Persian version of the main landing page
+overview.html : Persian version of the project overview
+Levels/fa-XX.html : Persian translations of each level writeup
+
+
+VERSIONS/ (Changelog)
+---------------------
+v1.0.0.html  : Initial release - all 35 levels in English
+v1.1.0.html  : Added Persian translation
+v1.2.0.html  : Added overview page and expanded content
+CHANGELOG.md : Complete version history with dates and changes
+
+
+ASSETS/ (Shared Resources - Optional)
+--------------------------------------
+css/style.css : Global styles (if you extract them from individual files)
+js/main.js    : Shared JavaScript (particles, scroll progress, etc.)
+images/logo.png : Project branding image
+
+
+===============================================================================
+NAVIGATION FLOW
+===============================================================================
+
+User opens index.html
+        ↓
+    [Home Page]
+   - Displays all 35 levels
+   - Progress tracking
+   - Language switcher (EN/FA)
+        ↓
+   Clicks on a level card
+        ↓
+   [Level Page: en-XX.html]
+   - Vulnerability explanation
+   - Step-by-step solution
+   - Code analysis
+   - Defense measures
+   - Key takeaways
+   - Navigation: Previous / Next level
+        ↓
+   Clicks "Back to List"
+        ↓
+   Returns to index.html
+
+
+===============================================================================
+FOR DEVELOPERS - Usage in HTML
+===============================================================================
+
+CSS:
+<link rel="stylesheet" href="../assets/css/style.css">
+
+JavaScript:
+<script src="../assets/js/main.js"></script>
+
+Logo:
+<img src="../assets/images/logo.png" alt="Natas Writeup Logo" class="logo">
+
+
+===============================================================================
+KEY FEATURES
+===============================================================================
+
+Bilingual Support     : Complete English and Persian versions
+Progress Tracking     : Sidebar shows current level and scroll progress
+Difficulty Badges     : Color-coded: Very Easy -> Very Hard
+Neon UI Theme         : Dark, cyber-inspired design with particle effects
+Mobile Responsive     : Works on all screen sizes
+Interactive Terminal  : Live terminal simulation on the homepage
+Donation Banner       : Support the creator with a coffee
+
+
+===============================================================================
+TECH STACK
+===============================================================================
+
+HTML5              : Structure
+CSS3               : Styling, animations, responsive design
+Vanilla JavaScript : Interactivity, particles, scroll tracking
+Google Fonts       : Inter, JetBrains Mono, Space Grotesk
+No external deps   : Fully self-contained
+
+
+===============================================================================
+LEVEL CATEGORIES
+===============================================================================
+
+Section 01 — Fundamentals    : 00-05  (View Source, JS Bypass, Directory Listing,
+                                        robots.txt, HTTP Headers, Cookies)
+Section 02 — Server-Side     : 06-10  (PHP Include, Path Traversal, Encoding Bypass,
+                                        Command Injection)
+Section 03 — Crypto & Upload : 11-15  (XOR Encryption, File Upload Client/Server,
+                                        SQL Injection, Blind SQL)
+Section 04 — Blind Injection : 16-20  (Blind Command Injection, Time-Based SQLi,
+                                        Session Attacks)
+Section 05 — Advanced Inj.   : 21-25  (Session Data Injection, HTTP Header Injection,
+                                        Type Juggling, Log Poisoning)
+Section 06 — Object & SQL    : 26-30  (PHP Object Injection, UNION-Based SQLi,
+                                        Stacked Queries, Filter Bypass)
+Section 07 — Upload & XXE    : 31-34  (File Upload Image, XXE Basic,
+                                        File Inclusion, DTD-Based)
+
+
+===============================================================================
+NOTES
+===============================================================================
+
+- This project follows Semantic Versioning (Major.Minor.Patch)
+- English and Persian versions are maintained simultaneously
+- All 35 levels are fully documented in both languages
+- The project is fully self-contained with no external dependencies
+
+DISCLAIMER: This project is for educational purposes only. All passwords and
+solutions are provided for learning and should not be used maliciously.
