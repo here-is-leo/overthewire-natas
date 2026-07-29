@@ -2,9 +2,9 @@
 # Natas Writeup
 
 [![OverTheWire](https://img.shields.io/badge/OverTheWire-Natas-3fb950)](https://overthewire.org/wargames/natas/)
-[![GitHub stars](https://img.shields.io/github/stars/this-is-the-leo/overthewire-natas.svg?style=social)](https://github.com/this-is-the-leo/overthewire-natas)
-[![Latest Release](https://img.shields.io/github/v/release/this-is-the-leo/overthewire-natas?style=for-the-badge&color=4fc3ff)](https://github.com/this-is-the-leo/overthewire-natas/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/this-is-the-leo/overthewire-natas/total?style=for-the-badge&color=a78bfa)](https://github.com/this-is-the-leo/overthewire-natas/releases)
+[![GitHub stars](https://img.shields.io/github/stars/here-is-leo/overthewire-natas.svg?style=social)](https://github.com/here-is-leo/overthewire-natas)
+[![Latest Release](https://img.shields.io/github/v/release/here-is-leo/overthewire-natas?style=for-the-badge&color=4fc3ff)](https://github.com/here-is-leo/overthewire-natas/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/here-is-leo/overthewire-natas/total?style=for-the-badge&color=a78bfa)](https://github.com/here-is-leo/overthewire-natas/releases)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![HTML](https://img.shields.io/badge/HTML-5-orange)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS](https://img.shields.io/badge/CSS-3-blue)](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -348,17 +348,17 @@ Session IDs must be cryptographically random with high entropy. Never use sequen
 
 ## Version History
 
-[![Latest Release](https://img.shields.io/github/v/release/this-is-the-leo/overthewire-natas?style=for-the-badge&color=4fc3ff)](https://github.com/this-is-the-leo/overthewire-natas/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/this-is-the-leo/overthewire-natas/total?style=for-the-badge&color=a78bfa)](https://github.com/this-is-the-leo/overthewire-natas/releases)
+[![Latest Release](https://img.shields.io/github/v/release/here-is-leo/overthewire-natas?style=for-the-badge&color=4fc3ff)](https://github.com/here-is-leo/overthewire-natas/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/here-is-leo/overthewire-natas/total?style=for-the-badge&color=a78bfa)](https://github.com/here-is-leo/overthewire-natas/releases)
 
 | Version | Date | Status | Download |
 |---------|------|--------|----------|
-| **v0.6.0** | 2026-06-26 | ✅ **Current** | [Download](https://github.com/this-is-the-leo/overthewire-natas/releases/tag/v0.6.0) |
-| **v0.5.0** | 2026-06-25 | ✅ Supported | [Download](https://github.com/this-is-the-leo/overthewire-natas/releases/tag/v0.5.0) |
-| **v0.4.0** | 2026-06-23 | ✅ Supported | [Download](https://github.com/this-is-the-leo/overthewire-natas/releases/tag/v0.4.0) |
-| **v0.3.0** | 2026-06-20 | ✅ Supported | [Download](https://github.com/this-is-the-leo/overthewire-natas/releases/tag/v0.3.0) |
-| **v0.2.0** | 2026-06-17 | ✅ Supported | [Download](https://github.com/this-is-the-leo/overthewire-natas/releases/tag/v0.2.0) |
-| **v0.1.0** | 2026-06-13 | ✅ Supported | [Download](https://github.com/this-is-the-leo/overthewire-natas/releases/tag/v0.1.0) |
+| **v0.6.0** | 2026-06-26 | ✅ **Current** | [Download](https://github.com/here-is-leo/overthewire-natas/releases/tag/v0.6.0) |
+| **v0.5.0** | 2026-06-25 | ✅ Supported | [Download](https://github.com/here-is-leo/overthewire-natas/releases/tag/v0.5.0) |
+| **v0.4.0** | 2026-06-23 | ✅ Supported | [Download](https://github.com/here-is-leo/overthewire-natas/releases/tag/v0.4.0) |
+| **v0.3.0** | 2026-06-20 | ✅ Supported | [Download](https://github.com/here-is-leo/overthewire-natas/releases/tag/v0.3.0) |
+| **v0.2.0** | 2026-06-17 | ✅ Supported | [Download](https://github.com/here-is-leo/overthewire-natas/releases/tag/v0.2.0) |
+| **v0.1.0** | 2026-06-13 | ✅ Supported | [Download](https://github.com/here-is-leo/overthewire-natas/releases/tag/v0.1.0) |
 
 ### 📦 What's New in v0.6.0
 
@@ -381,7 +381,7 @@ Visit the GitHub Pages URL to view the writeup in your browser.
 ### Option 2: Clone Locally
 
 ```bash
-git clone https://github.com/this-is-the-leo/overthewire-natas.git
+git clone https://github.com/here-is-leo/overthewire-natas.git
 cd overthewire-natas
 
 # English version:
@@ -460,10 +460,10 @@ SOFTWARE.
 
 **Leo (Ilya Farahani)**
 
-- 🌐 GitHub: [github.com/this-is-the-leo](https://github.com/this-is-the-leo)
+- 🌐 GitHub: [github.com/here-is-leo](https://github.com/here-is-leo)
 - 🔗 LinkedIn: [linkedin.com/in/ilya-farahani-2160103b0](https://www.linkedin.com/in/ilya-farahani-2160103b0)
 - 💬 Telegram: [t.me/Here_is_leo](https://t.me/Here_is_leo)
-- 📧 Email: ilyafarahani9@gmail.com
+- 📧 Email: ilyafarahanii@gmail.com
 
 Feel free to reach out for questions, collaboration, or feedback!
 
@@ -473,7 +473,7 @@ Feel free to reach out for questions, collaboration, or feedback!
 
 If you found this writeup helpful, please consider starring the repository on GitHub!
 
-[![GitHub stars](https://img.shields.io/github/stars/this-is-the-leo/overthewire-natas.svg?style=social)](https://github.com/this-is-the-leo/overthewire-natas)
+[![GitHub stars](https://img.shields.io/github/stars/here-is-leo/overthewire-natas.svg?style=social)](https://github.com/here-is-leo/overthewire-natas)
 
 ---
 
@@ -492,9 +492,9 @@ If you found this writeup helpful, please consider starring the repository on Gi
 # راهنمای ناتاس
 
 [![OverTheWire](https://img.shields.io/badge/OverTheWire-Natas-3fb950)](https://overthewire.org/wargames/natas/)
-[![GitHub stars](https://img.shields.io/github/stars/this-is-the-leo/overthewire-natas.svg?style=social)](https://github.com/this-is-the-leo/overthewire-natas)
-[![Latest Release](https://img.shields.io/github/v/release/this-is-the-leo/overthewire-natas?style=for-the-badge&color=4fc3ff)](https://github.com/this-is-the-leo/overthewire-natas/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/this-is-the-leo/overthewire-natas/total?style=for-the-badge&color=a78bfa)](https://github.com/this-is-the-leo/overthewire-natas/releases)
+[![GitHub stars](https://img.shields.io/github/stars/here-is-leo/overthewire-natas.svg?style=social)](https://github.com/here-is-leo/overthewire-natas)
+[![Latest Release](https://img.shields.io/github/v/release/here-is-leo/overthewire-natas?style=for-the-badge&color=4fc3ff)](https://github.com/here-is-leo/overthewire-natas/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/here-is-leo/overthewire-natas/total?style=for-the-badge&color=a78bfa)](https://github.com/here-is-leo/overthewire-natas/releases)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![HTML](https://img.shields.io/badge/HTML-5-orange)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS](https://img.shields.io/badge/CSS-3-blue)](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -838,17 +838,17 @@ natas-writeup/
 
 ## تاریخچه نسخه‌ها
 
-[![Latest Release](https://img.shields.io/github/v/release/this-is-the-leo/overthewire-natas?style=for-the-badge&color=4fc3ff)](https://github.com/this-is-the-leo/overthewire-natas/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/this-is-the-leo/overthewire-natas/total?style=for-the-badge&color=a78bfa)](https://github.com/this-is-the-leo/overthewire-natas/releases)
+[![Latest Release](https://img.shields.io/github/v/release/here-is-leo/overthewire-natas?style=for-the-badge&color=4fc3ff)](https://github.com/here-is-leo/overthewire-natas/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/here-is-leo/overthewire-natas/total?style=for-the-badge&color=a78bfa)](https://github.com/here-is-leo/overthewire-natas/releases)
 
 | نسخه | تاریخ | وضعیت | دانلود |
 |------|------|--------|-------|
-| **v0.6.0** | ۲۰۲۶-۰۶-۲۶ | ✅ **فعلی** | [دانلود](https://github.com/this-is-the-leo/overthewire-natas/releases/tag/v0.6.0) |
-| **v0.5.0** | ۲۰۲۶-۰۶-۲۵ | ✅ پشتیبانی شده | [دانلود](https://github.com/this-is-the-leo/overthewire-natas/releases/tag/v0.5.0) |
-| **v0.4.0** | ۲۰۲۶-۰۶-۲۳ | ✅ پشتیبانی شده | [دانلود](https://github.com/this-is-the-leo/overthewire-natas/releases/tag/v0.4.0) |
-| **v0.3.0** | ۲۰۲۶-۰۶-۲۰ | ✅ پشتیبانی شده | [دانلود](https://github.com/this-is-the-leo/overthewire-natas/releases/tag/v0.3.0) |
-| **v0.2.0** | ۲۰۲۶-۰۶-۱۷ | ✅ پشتیبانی شده | [دانلود](https://github.com/this-is-the-leo/overthewire-natas/releases/tag/v0.2.0) |
-| **v0.1.0** | ۲۰۲۶-۰۶-۱۳ | ✅ پشتیبانی شده | [دانلود](https://github.com/this-is-the-leo/overthewire-natas/releases/tag/v0.1.0) |
+| **v0.6.0** | ۲۰۲۶-۰۶-۲۶ | ✅ **فعلی** | [دانلود](https://github.com/here-is-leo/overthewire-natas/releases/tag/v0.6.0) |
+| **v0.5.0** | ۲۰۲۶-۰۶-۲۵ | ✅ پشتیبانی شده | [دانلود](https://github.com/here-is-leo/overthewire-natas/releases/tag/v0.5.0) |
+| **v0.4.0** | ۲۰۲۶-۰۶-۲۳ | ✅ پشتیبانی شده | [دانلود](https://github.com/here-is-leo/overthewire-natas/releases/tag/v0.4.0) |
+| **v0.3.0** | ۲۰۲۶-۰۶-۲۰ | ✅ پشتیبانی شده | [دانلود](https://github.com/here-is-leo/overthewire-natas/releases/tag/v0.3.0) |
+| **v0.2.0** | ۲۰۲۶-۰۶-۱۷ | ✅ پشتیبانی شده | [دانلود](https://github.com/here-is-leo/overthewire-natas/releases/tag/v0.2.0) |
+| **v0.1.0** | ۲۰۲۶-۰۶-۱۳ | ✅ پشتیبانی شده | [دانلود](https://github.com/here-is-leo/overthewire-natas/releases/tag/v0.1.0) |
 
 ### 📦 جدید در نسخه v0.6.0
 
@@ -871,7 +871,7 @@ natas-writeup/
 ### گزینه ۲: کلون محلی
 
 ```bash
-git clone https://github.com/this-is-the-leo/overthewire-natas.git
+git clone https://github.com/here-is-leo/overthewire-natas.git
 cd overthewire-natas
 
 # نسخه انگلیسی:
@@ -950,10 +950,10 @@ SOFTWARE.
 
 **لئو (ایلیا فراهانی)**
 
-- 🌐 گیت‌هاب: [github.com/this-is-the-leo](https://github.com/this-is-the-leo)
+- 🌐 گیت‌هاب: [github.com/here-is-leo](https://github.com/here-is-leo)
 - 🔗 لینکدین: [linkedin.com/in/ilya-farahani-2160103b0](https://www.linkedin.com/in/ilya-farahani-2160103b0)
 - 💬 تلگرام: [t.me/Here_is_leo](https://t.me/Here_is_leo)
-- 📧 ایمیل: ilyafarahani9@gmail.com
+- 📧 ایمیل: ilyafarahanii@gmail.com
 
 برای سوالات، همکاری یا بازخورد، خوش آمدید!
 
@@ -963,7 +963,7 @@ SOFTWARE.
 
 اگر این راهنما را مفید یافتید، لطفاً مخزن را در گیت‌هاب ستاره دهید!
 
-[![GitHub stars](https://img.shields.io/github/stars/this-is-the-leo/overthewire-natas.svg?style=social)](https://github.com/this-is-the-leo/overthewire-natas)
+[![GitHub stars](https://img.shields.io/github/stars/here-is-leo/overthewire-natas.svg?style=social)](https://github.com/here-is-leo/overthewire-natas)
 
 ---
 
