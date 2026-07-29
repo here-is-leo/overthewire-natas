@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ناتاس · مروری بر پروژه</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Same styles as English version with RTL adjustments */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #060a12;
+      --bg-card: rgba(12, 21, 34, 0.85);
+      --bg-surface: rgba(22, 33, 50, 0.6);
+      --border: rgba(42, 58, 82, 0.4);
+      --border-light: rgba(61, 82, 109, 0.6);
+      --text-primary: #eaf1fc;
+      --text-secondary: #92adcf;
+      --text-muted: #4a6888;
+      --accent-cyan: #4fc3ff;
+      --accent-green: #4ade80;
+      --accent-yellow: #facc15;
+      --accent-rose: #f472b6;
+      --accent-purple: #a78bfa;
+      --accent-orange: #fb923c;
+      --accent-teal: #2dd4bf;
+      --shadow: rgba(0, 0, 0, 0.7);
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-display: 'Space Grotesk', 'Inter', sans-serif;
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+      --radius-xl: 36px;
+      --radius-full: 9999px;
+      --glow-cyan: 0 0 40px rgba(79, 195, 255, 0.06);
+      --glow-purple: 0 0 40px rgba(167, 139, 250, 0.04);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 2;
+      -webkit-font-smoothing: antialiased;
+      opacity: 0;
+      animation: cinematicEnter 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      min-height: 100vh;
+    }
+
+    @keyframes cinematicEnter {
+      0% { opacity: 0; transform: scale(0.97) translateY(12px); filter: blur(10px); }
+      40% { transform: scale(1.002) translateY(-3px); filter: blur(2px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+    }
+
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg); border-radius: var(--radius-full); margin: 6px 0; }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--accent-cyan), var(--accent-purple), var(--accent-rose));
+      border-radius: var(--radius-full);
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 30px rgba(79, 195, 255, 0.05);
+    }
+
+    .bg-layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .bg-layer-1 {
+      background:
+        radial-gradient(ellipse at 20% 30%, rgba(79, 195, 255, 0.04) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 70%, rgba(167, 139, 250, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(244, 114, 182, 0.02) 0%, transparent 70%);
+      animation: bgPulse 25s ease-in-out infinite alternate;
+    }
+    @keyframes bgPulse {
+      0% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.04); }
+      100% { opacity: 0.6; transform: scale(0.96); }
+    }
+
+    header {
+      padding: 3rem 2rem 2.5rem;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(ellipse at 50% 0%, rgba(15, 31, 50, 0.8) 0%, var(--bg) 80%);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: 50%;
+      width: 60%;
+      height: 150%;
+      transform: translateX(-50%);
+      background: radial-gradient(ellipse at center, rgba(79, 195, 255, 0.03), transparent 70%);
+      pointer-events: none;
+      animation: headerGlow 6s ease-in-out infinite alternate;
+    }
+    @keyframes headerGlow {
+      0% { opacity: 0.3; transform: translateX(-50%) scale(0.8); }
+      100% { opacity: 1; transform: translateX(-50%) scale(1.2); }
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-cyan), var(--accent-purple), var(--accent-rose), transparent);
+      opacity: 0.3;
+      animation: auroraSlide 4s ease-in-out infinite;
+      background-size: 300% 100%;
+    }
+    @keyframes auroraSlide {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      max-width: 960px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .back-link {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: all 0.4s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-full);
+      border: 1px solid transparent;
+    }
+    .back-link:hover {
+      color: var(--accent-cyan);
+      border-color: rgba(79, 195, 255, 0.06);
+      background: rgba(79, 195, 255, 0.04);
+      transform: translateX(-4px);
+      box-shadow: var(--glow-cyan);
+    }
+    .back-link svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.3s ease;
+    }
+    .back-link:hover svg { transform: translateX(-4px); }
+
+    .header-title {
+      max-width: 820px;
+      margin: 1.5rem auto 0;
+      position: relative;
+      z-index: 2;
+    }
+    .header-title h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 5vw, 3.8rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+    .header-title h1 span {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple), var(--accent-rose));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 60px rgba(79, 195, 255, 0.04));
+    }
+    .header-title .sub {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+      opacity: 0.6;
+      letter-spacing: 0.05em;
+    }
+    .header-title .sub .highlight { color: var(--accent-cyan); opacity: 1; }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .overview-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 60px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+      margin-bottom: 2rem;
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .overview-card:hover {
+      border-color: var(--border-light);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 80px rgba(0, 0, 0, 0.4), var(--glow-cyan), var(--glow-purple);
+    }
+
+    .overview-header {
+      padding: 1.8rem 2.2rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-surface);
+    }
+    .overview-header .badge-group {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.4rem;
+    }
+    .overview-header .badge {
+      font-family: var(--font-mono);
+      font-size: 0.5rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding: 0.2rem 0.9rem;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .overview-header .badge.cyan {
+      border-color: rgba(79, 195, 255, 0.1);
+      color: var(--accent-cyan);
+    }
+    .overview-header .badge.purple {
+      border-color: rgba(167, 139, 250, 0.1);
+      color: var(--accent-purple);
+    }
+    .overview-header .badge.rose {
+      border-color: rgba(244, 114, 182, 0.1);
+      color: var(--accent-rose);
+    }
+    .overview-header .badge.green {
+      border-color: rgba(74, 222, 128, 0.1);
+      color: var(--accent-green);
+    }
+    .overview-header h2 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+    .overview-header p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-top: 0.2rem;
+      opacity: 0.8;
+    }
+
+    .overview-body {
+      padding: 2rem 2.2rem;
+    }
+
+    .overview-body .section {
+      margin-bottom: 2rem;
+    }
+    .overview-body .section:last-child { margin-bottom: 0; }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border), transparent);
+    }
+
+    .overview-body p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 2.2;
+      margin-bottom: 0.8rem;
+    }
+    .overview-body p strong {
+      color: var(--text-primary);
+    }
+    .overview-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 0.6rem;
+    }
+
+    .feature-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1.2rem 1.4rem;
+      transition: all 0.3s ease;
+    }
+    .feature-card:hover {
+      border-color: var(--border-light);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+    .feature-card .icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.2rem;
+      display: block;
+    }
+    .feature-card .title {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .feature-card .desc {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 0.1rem;
+      opacity: 0.8;
+    }
+
+    .stats-bar {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      padding: 1rem 1.5rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-top: 0.8rem;
+      justify-content: center;
+    }
+    .stats-bar .stat {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+    .stats-bar .stat span {
+      color: var(--accent-cyan);
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+    .tech-tag {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      font-weight: 500;
+      padding: 0.15rem 0.9rem;
+      border-radius: var(--radius-full);
+      background: rgba(167, 139, 250, 0.05);
+      color: var(--accent-purple);
+      border: 1px solid rgba(167, 139, 250, 0.06);
+      transition: all 0.3s ease;
+    }
+    .tech-tag:hover {
+      background: rgba(167, 139, 250, 0.08);
+      border-color: rgba(167, 139, 250, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .dev-credit-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.4rem 1.5rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      max-width: 600px;
+      margin: 1.5rem auto 0.5rem;
+      border-radius: var(--radius-sm);
+      flex-wrap: wrap;
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      color: var(--text-muted);
+      backdrop-filter: blur(8px);
+      transition: all 0.4s ease;
+    }
+    .dev-credit-bar:hover { border-color: rgba(79, 195, 255, 0.1); box-shadow: var(--glow-cyan); }
+    .dev-credit-bar .name {
+      font-weight: 600;
+      color: var(--accent-cyan);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 0.6rem;
+    }
+    .dev-credit-bar .name:hover { color: var(--accent-purple); text-shadow: 0 0 30px rgba(167, 139, 250, 0.1); }
+    .dev-credit-bar .sep { color: var(--border); }
+    .dev-credit-bar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .dev-credit-bar a:hover { color: var(--accent-cyan); }
+
+    .cta-section {
+      text-align: center;
+      padding: 1.8rem 2rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: radial-gradient(ellipse at 50% 80%, rgba(79, 195, 255, 0.02), transparent 60%);
+      margin-top: 1.5rem;
+    }
+    .cta-section .cta-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .cta-section .cta-desc {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-top: 0.1rem;
+      opacity: 0.8;
+    }
+    .cta-btn {
+      display: inline-block;
+      margin-top: 0.8rem;
+      padding: 0.6rem 2.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      border: 1px solid rgba(79, 195, 255, 0.1);
+      border-radius: var(--radius-full);
+      background: rgba(79, 195, 255, 0.03);
+      text-decoration: none;
+      transition: all 0.4s ease;
+      letter-spacing: 0.05em;
+    }
+    .cta-btn:hover {
+      background: rgba(79, 195, 255, 0.06);
+      border-color: rgba(79, 195, 255, 0.2);
+      transform: translateY(-3px);
+      box-shadow: var(--glow-cyan);
+    }
+
+    .expanded-section {
+      margin-top: 0.5rem;
+      padding: 1.2rem 1.5rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      transition: all 0.3s ease;
+    }
+    .expanded-section:hover {
+      border-color: var(--border-light);
+      box-shadow: var(--glow-cyan);
+    }
+    .expanded-section .exp-title {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.2rem;
+    }
+    .expanded-section .exp-desc {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      line-height: 2;
+    }
+    .expanded-section ul {
+      list-style: none;
+      margin: 0.3rem 0 0 0.5rem;
+    }
+    .expanded-section ul li {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      padding: 0.1rem 0;
+      padding-right: 1.2rem;
+      position: relative;
+    }
+    .expanded-section ul li::before {
+      content: '◂';
+      position: absolute;
+      right: 0;
+      color: var(--accent-cyan);
+      opacity: 0.4;
+    }
+
+    .main-footer {
+      text-align: center;
+      padding: 2.5rem 2rem 1.5rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      border-top: 1px solid var(--border);
+      letter-spacing: 0.05em;
+      background: radial-gradient(ellipse at 50% 100%, rgba(12, 21, 34, 0.3), transparent);
+      margin-top: 1.5rem;
+    }
+    .main-footer .footer-dev {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+    .main-footer .footer-dev .name {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .main-footer .footer-dev .name:hover { color: var(--accent-purple); text-shadow: 0 0 40px rgba(167, 139, 250, 0.05); }
+    .main-footer .footer-links {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .main-footer .footer-links a {
+      font-size: 0.5rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .main-footer .footer-links a:hover { color: var(--accent-cyan); }
+    .main-footer .footer-links .sep { color: var(--border); opacity: 0.3; }
+    .main-footer .copy {
+      font-size: 0.45rem;
+      opacity: 0.3;
+      letter-spacing: 0.08em;
+      margin-top: 0.3rem;
+    }
+
+    @media (max-width: 700px) {
+      .grid-2col { grid-template-columns: 1fr; }
+      .stats-bar { gap: 0.8rem; flex-direction: column; align-items: center; }
+      header { padding: 2rem 1rem 1.5rem; }
+      .overview-header { padding: 1.2rem 1.2rem 0.8rem; }
+      .overview-body { padding: 1.2rem; }
+      .header-title h1 { font-size: clamp(2rem, 8vw, 2.8rem); }
+      .dev-credit-bar { font-size: 0.5rem; padding: 0.3rem 0.8rem; gap: 0.3rem; flex-wrap: wrap; }
+      .expanded-section { padding: 1rem; }
+    }
+    @media (min-width: 701px) and (max-width: 900px) {
+      .grid-2col { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== BG LAYERS ===== -->
+<div class="bg-layer bg-layer-1"></div>
+
+<header>
+  <div class="top-nav">
+    <a href="index.html" class="back-link">  <!-- ✅ اصلاح شد -->
+      <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      بازگشت به صفحه اصلی
+    </a>
+    <span style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-muted);letter-spacing:0.05em;">مروری بر پروژه</span>
+  </div>
+  <div class="header-title">
+    <h1>درباره این <span>راهنما</span></h1>
+    <p class="sub">// راهنمای جامع <span class="highlight">ناتاس</span> — بازی امنیت وب از OverTheWire</p>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== OVERVIEW CARD ===== -->
+  <div class="overview-card">
+    <div class="overview-header">
+      <div class="badge-group">
+        <span class="badge cyan">📚 ۳۵ مرحله</span>
+        <span class="badge purple">🔐 امنیت وب</span>
+        <span class="badge rose">🎯 عملی</span>
+        <span class="badge green">⚡ آموزشی</span>
+      </div>
+      <h2>ناتاس چیست؟</h2>
+      <p>ناتاس یک بازی جنگی (Wargame) در حوزه امنیت وب از OverTheWire است که مفاهیم بنیادین امنیت برنامه‌های وب را از طریق یک سری چالش‌های مرحله‌ای آموزش می‌دهد.</p>
+    </div>
+
+    <div class="overview-body">
+
+      <!-- ===== SECTION: About the Game ===== -->
+      <div class="section">
+        <div class="section-label">// درباره بازی</div>
+        <p>
+          <strong>ناتاس</strong> یک <strong>بازی جنگی امنیت وب</strong> است که برای آموزش مفاهیم بنیادین امنیت برنامه‌های وب طراحی شده است.
+          هر مرحله یک <strong>برنامه وب آسیب‌پذیر</strong> با یک نقص امنیتی خاص را ارائه می‌دهد. هدف این است که <strong>آسیب‌پذیری را پیدا کرده و آن را بهره‌برداری</strong> کنید تا رمز عبور مرحله بعد را به دست آورید.
+        </p>
+        <p>
+          چالش‌ها با <strong>مفاهیم پایه</strong> مانند مشاهده کد منبع HTML شروع می‌شوند و به تدریج به <strong>موضوعات پیشرفته‌تری</strong> مانند تزریق SQL، تزریق دستورات، تزریق بین‌سایتی (XSS)، گنجاندن فایل، آسیب‌پذیری‌های سریال‌زدایی و حملات XML External Entity (XXE) می‌رسند.
+        </p>
+        <p>
+          برخلاف بسیاری از پلتفرم‌های CTF، ناتاس به گونه‌ای طراحی شده است که برای <strong>مبتدیان قابل دسترس</strong> باشد و در عین حال <strong>تجارب یادگیری ارزشمندی</strong> برای توسعه‌دهندگان با تجربه فراهم کند. هر مرحله بر دانش قبلی بنا می‌شود و یک مسیر یادگیری ساختاریافته در چشم‌انداز آسیب‌پذیری‌های امنیت وب ایجاد می‌کند.
+        </p>
+      </div>
+
+      <!-- ===== SECTION: Why This Writeup Exists ===== -->
+      <div class="section">
+        <div class="section-label">// چرا این راهنما وجود دارد؟</div>
+        <p>
+          این راهنما برای ارائه یک <strong>منبع یادگیری جامع</strong> برای هر کسی که در حال گذراندن بازی ناتاس است، ایجاد شده است.
+          در حالی که حل چالش‌ها لذت‌بخش است، <strong>درک آسیب‌پذیری‌های اساسی</strong> و <strong>یادگیری نحوه پیشگیری از آنها</strong> ارزش واقعی این تمرین است.
+        </p>
+        <p>
+          هر مرحله در این راهنما شامل موارد زیر است:
+        </p>
+        <ul style="list-style:none;margin:0.3rem 0 0.3rem 0.5rem;color:var(--text-secondary);font-size:0.92rem;">
+          <li style="padding:0.1rem 0;padding-right:1.2rem;position:relative;">▸ یک <strong>توضیح دقیق</strong> از آسیب‌پذیری</li>
+          <li style="padding:0.1rem 0;padding-right:1.2rem;position:relative;">▸ دستورالعمل‌های <strong>راه حل گام‌به‌گام</strong> با رویکردهای متعدد</li>
+          <li style="padding:0.1rem 0;padding-right:1.2rem;position:relative;">▸ <strong>تحلیل کد</strong> کد منبع آسیب‌پذیر</li>
+          <li style="padding:0.1rem 0;padding-right:1.2rem;position:relative;">▸ <strong>اقدامات دفاعی عملی</strong> برای جلوگیری از آسیب‌پذیری</li>
+          <li style="padding:0.1rem 0;padding-right:1.2rem;position:relative;">▸ <strong>نکات کلیدی</strong> برای تثبیت یادگیری</li>
+        </ul>
+        <p style="margin-top:0.3rem;">
+          چه یک <strong>مبتدی</strong> باشید که برای اولین بار امنیت وب را یاد می‌گیرید و چه یک <strong>توسعه‌دهنده با تجربه</strong>
+          که به دنبال عمق‌بخشی به درک خود هستید، این راهنما تلاش می‌کند <strong>دانش واضح و عملی</strong> را ارائه دهد.
+        </p>
+      </div>
+
+      <!-- ===== SECTION: Project Goals ===== -->
+      <div class="section">
+        <div class="section-label">// اهداف پروژه</div>
+        <p>این راهنما بر اساس چهار هدف اصلی ساخته شده است:</p>
+
+        <div class="grid-2col">
+          <div class="feature-card">
+            <span class="icon">📖</span>
+            <div class="title">توضیحات واضح</div>
+            <div class="desc">هر مرحله با دستورالعمل‌های گام‌به‌گام، تحلیل کد و تفکیک مفهومی توضیح داده شده است تا موضوعات پیچیده را قابل درک کند.</div>
+          </div>
+          <div class="feature-card">
+            <span class="icon">🔍</span>
+            <div class="title">بررسی عمیق آسیب‌پذیری‌ها</div>
+            <div class="desc">درک کنید <em>چرا</em> هر آسیب‌پذیری وجود دارد و <em>چگونه</em> می‌توان از آن بهره‌برداری کرد. یاد بگیرید مانند یک مهاجم فکر کنید.</div>
+          </div>
+          <div class="feature-card">
+            <span class="icon">🛡️</span>
+            <div class="title">اقدامات دفاعی</div>
+            <div class="desc">با توصیه‌های امنیتی عملی، روش‌های کدنویسی امن و استراتژی‌های دفاع عمیق، نحوه پیشگیری از هر آسیب‌پذیری را بیاموزید.</div>
+          </div>
+          <div class="feature-card">
+            <span class="icon">💻</span>
+            <div class="title">مثال‌های عملی</div>
+            <div class="desc">شامل قطعه‌های کد، دستورات curl، اسکریپت‌های پایتون و نمایش‌های عملی برای نشان دادن نحوه عملکرد بهره‌برداری در عمل است.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SECTION: What You'll Learn ===== -->
+      <div class="section">
+        <div class="section-label">// چه چیزی یاد خواهید گرفت؟</div>
+        <p>
+          با کار بر روی این مراحل و دنبال کردن این راهنما، یک <strong>درک عملی</strong> از رایج‌ترین آسیب‌پذیری‌های امنیت وب را توسعه خواهید داد. شما یاد خواهید گرفت که مسائل زیر را شناسایی، بهره‌برداری و پیشگیری کنید:
+        </p>
+
+        <div class="expanded-section" style="margin-top:0.6rem;">
+          <div class="exp-title">🟢 مبانی</div>
+          <div class="exp-desc">
+            از اصول اولیه شروع می‌کنید، یاد می‌گیرید که چگونه کد منبع را مشاهده و تحلیل کنید، محدودیت‌های سمت کلاینت را دور بزنید و فایل‌ها و دایرکتوری‌های پنهان را کشف کنید.
+            این مهارت‌های بنیادین برای هر کار امنیتی ضروری هستند.
+          </div>
+        </div>
+
+        <div class="expanded-section">
+          <div class="exp-title">🟠 آسیب‌پذیری‌های سمت سرور</div>
+          <div class="exp-desc">
+            به عمق نقص‌های امنیتی سمت سرور بروید:
+            <ul>
+              <li><strong>گنجاندن فایل محلی (LFI)</strong> — خواندن فایل‌های دلخواه از طریق گنجاندن ناامن فایل</li>
+              <li><strong>پیمایش مسیر (Path Traversal)</strong> — فرار از ساختار دایرکتوری تعیین شده</li>
+              <li><strong>تزریق دستورات (Command Injection)</strong> — اجرای دستورات سیستم از طریق ورودی‌های تصفیه نشده</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="expanded-section">
+          <div class="exp-title">🔴 تزریق SQL</div>
+          <div class="exp-desc">
+            بر یکی از حیاتی‌ترین آسیب‌پذیری‌های وب مسلط شوید:
+            <ul>
+              <li><strong>دور زدن احراز هویت</strong> — نفوذ به برنامه‌ها</li>
+              <li><strong>تزریق SQL کور (Blind)</strong> — استخراج داده بدون خروجی قابل مشاهده</li>
+              <li><strong>حملات مبتنی بر زمان</strong> — استفاده از تأخیر برای استنباط اطلاعات</li>
+              <li><strong>تزریق مبتنی بر UNION</strong> — ترکیب پرس‌وجوها برای استخراج داده</li>
+              <li><strong>پرس‌وجوهای پشته‌ای (Stacked Queries)</strong> — اجرای چندین دستور</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="expanded-section">
+          <div class="exp-title">🔵 بهره‌برداری پیشرفته</div>
+          <div class="exp-desc">
+            بردارهای حمله پیچیده را کاوش کنید:
+            <ul>
+              <li><strong>تغییر نوع در PHP</strong> — بهره‌برداری از مقایسه‌های غیرسخت‌گیرانه</li>
+              <li><strong>تزریق شی</strong> — استفاده از نقص‌های سریال‌زدایی</li>
+              <li><strong>مسمومیت لاگ</strong> — تبدیل لاگ‌های سرور به اجرای کد</li>
+              <li><strong>XML External Entity (XXE)</strong> — خواندن فایل‌ها از طریق پردازشگرهای XML</li>
+              <li><strong>حملات نشست (Session)</strong> — پیش‌بینی و دستکاری شناسه‌های نشست</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="expanded-section" style="margin-bottom:0;">
+          <div class="exp-title">🟣 حملات آپلود فایل</div>
+          <div class="exp-desc">
+            خطرات قابلیت آپلود فایل را درک کنید:
+            <ul>
+              <li><strong>دور زدن اعتبارسنجی سمت کلاینت</strong> — دور زدن بررسی‌های فرانت‌اند</li>
+              <li><strong>دور زدن اعتبارسنجی سمت سرور</strong> — فرار از تأیید تصویر</li>
+              <li><strong>بهره‌برداری از Magic Bytes</strong> — استفاده از هدر فایل‌ها برای پنهان کردن محموله‌ها</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SECTION: Stats ===== -->
+      <div class="section">
+        <div class="section-label">// تفکیک مراحل</div>
+        <div class="stats-bar">
+          <span class="stat">📚 <span>۳۵</span> مرحله</span>
+          <span class="stat">🟢 <span>۵</span> خیلی آسان</span>
+          <span class="stat">🟢 <span>۷</span> آسان</span>
+          <span class="stat">🟡 <span>۲</span> متوسط</span>
+          <span class="stat">🟠 <span>۱۰</span> سخت</span>
+          <span class="stat">🔴 <span>۱۱</span> خیلی سخت</span>
+        </div>
+      </div>
+
+      <!-- ===== SECTION: Covered Topics ===== -->
+      <div class="section">
+        <div class="section-label">// موضوعات پوشش داده شده</div>
+        <div class="tech-stack">
+          <span class="tech-tag">مشاهده کد منبع</span>
+          <span class="tech-tag">دور زدن جاوااسکریپت</span>
+          <span class="tech-tag">لیست دایرکتوری</span>
+          <span class="tech-tag">robots.txt</span>
+          <span class="tech-tag">هدرهای HTTP</span>
+          <span class="tech-tag">دستکاری کوکی</span>
+          <span class="tech-tag">گنجاندن PHP</span>
+          <span class="tech-tag">پیمایش مسیر</span>
+          <span class="tech-tag">تزریق دستورات</span>
+          <span class="tech-tag">رمزگذاری XOR</span>
+          <span class="tech-tag">آپلود فایل</span>
+          <span class="tech-tag">تزریق SQL</span>
+          <span class="tech-tag">SQLi کور</span>
+          <span class="tech-tag">SQLi مبتنی بر زمان</span>
+          <span class="tech-tag">پیش‌بینی نشست</span>
+          <span class="tech-tag">تغییر نوع</span>
+          <span class="tech-tag">مسمومیت لاگ</span>
+          <span class="tech-tag">تزریق شی</span>
+          <span class="tech-tag">SQLi مبتنی بر UNION</span>
+          <span class="tech-tag">پرس‌وجوهای پشته‌ای</span>
+          <span class="tech-tag">XXE</span>
+          <span class="tech-tag">خروج داده OOB</span>
+        </div>
+      </div>
+
+      <!-- ===== SECTION: Who Is This For? ===== -->
+      <div class="section">
+        <div class="section-label">// این راهنما برای چه کسانی است؟</div>
+        <p>
+          این راهنما برای طیف گسترده‌ای از مخاطبان طراحی شده است:
+        </p>
+        <ul style="list-style:none;margin:0.3rem 0 0 0.5rem;color:var(--text-secondary);font-size:0.92rem;">
+          <li style="padding:0.15rem 0;padding-right:1.2rem;position:relative;">▸ <strong>مبتدیان</strong> — تازه وارد امنیت وب هستید؟ از مرحله ۰ شروع کنید و مهارت‌های خود را گام به گام بسازید.</li>
+          <li style="padding:0.15rem 0;padding-right:1.2rem;position:relative;">▸ <strong>توسعه‌دهندگان</strong> — با درک نحوه کار آسیب‌پذیری‌ها، کدنویسی امن را بیاموزید.</li>
+          <li style="padding:0.15rem 0;padding-right:1.2rem;position:relative;">▸ <strong>علاقه‌مندان به امنیت</strong> — درک خود را از امنیت برنامه‌های وب عمیق‌تر کنید.</li>
+          <li style="padding:0.15rem 0;padding-right:1.2rem;position:relative;">▸ <strong>بازیکنان CTF</strong> — از این به عنوان یک مرجع و منبع یادگیری برای چالش‌های مشابه استفاده کنید.</li>
+          <li style="padding:0.15rem 0;padding-right:1.2rem;position:relative;">▸ <strong>دانشجویان</strong> — آموزش امنیت سایبری خود را با تمرین عملی تکمیل کنید.</li>
+        </ul>
+        <p style="margin-top:0.3rem;">
+          هیچ تجربه قبلی در امنیت وب مورد نیاز نیست — فقط یک درک پایه از نحوه کار وب‌سایت‌ها و تمایل به یادگیری کافی است.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== CTA SECTION ===== -->
+  <div class="cta-section">
+    <div class="cta-title">🚀 آماده شروع هستید؟</div>
+    <div class="cta-desc">راهنما را از ابتدا مرور کنید یا به هر مرحله‌ای که برایتان جالب است بروید.</div>
+    <a href="index.html" class="cta-btn">مشاهده همه مراحل →</a>  <!-- ✅ اصلاح شد -->
+  </div>
+
+  <!-- ===== DEV CREDIT ===== -->
+  <div class="dev-credit-bar">
+    <span>✦</span>
+    <span>ساخته شده توسط</span>
+    <a href="https://github.com/this-is-the-leo" target="_blank" class="name">لئو</a>
+    <span class="sep">·</span>
+    <a href="https://github.com/this-is-the-leo" target="_blank">گیت‌هاب</a>
+    <span class="sep">|</span>
+    <a href="https://www.linkedin.com/in/ilya-farahani-2160103b0" target="_blank">لینکدین</a>
+    <span class="sep">|</span>
+    <a href="https://t.me/Here_is_leo" target="_blank">تلگرام</a>
+  </div>
+
+</main>
+
+<footer class="main-footer">
+  <div class="footer-dev">
+    <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap; justify-content:center;">
+      <span>توسعه داده شده با</span>
+      <span style="color:var(--accent-rose);">❤️</span>
+      <span>توسط</span>
+      <a href="https://github.com/this-is-the-leo" target="_blank" class="name">لئو</a>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/this-is-the-leo" target="_blank">گیت‌هاب</a>
+      <span class="sep">|</span>
+      <a href="https://www.linkedin.com/in/ilya-farahani-2160103b0" target="_blank">لینکدین</a>
+      <span class="sep">|</span>
+      <a href="https://t.me/Here_is_leo" target="_blank">تلگرام</a>
+      <span class="sep">|</span>
+      <a href="mailto:ilyafarahani9@gmail.com" target="_blank">ایمیل</a>
+    </div>
+  </div>
+  <div class="copy">&copy; ۲۰۲۵ لئو · راهنمای ناتاس OverTheWire · فقط برای اهداف آموزشی</div>
+</footer>
+
+</body>
+</html>
