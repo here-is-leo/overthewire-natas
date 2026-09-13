@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 420" role="img" aria-labelledby="title desc">
+  <title id="title">Natas Writeup — Web Security Lab</title>
+  <desc id="desc">Animated neon terminal illustration for the Natas Writeup project.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#070b18"/><stop offset=".5" stop-color="#11152b"/><stop offset="1" stop-color="#090d1b"/></linearGradient>
+    <linearGradient id="cyan" x1="0" x2="1"><stop stop-color="#5ee7ff"/><stop offset="1" stop-color="#7c5cff"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="7" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#6ee7ff" stroke-opacity=".08"/></pattern>
+  </defs>
+  <rect width="1400" height="420" rx="28" fill="url(#bg)"/>
+  <rect width="1400" height="420" rx="28" fill="url(#grid)"/>
+  <g opacity=".7" filter="url(#glow)"><circle cx="1150" cy="90" r="2" fill="#61dafb"><animate attributeName="cy" values="90;330;90" dur="7s" repeatCount="indefinite"/></circle><circle cx="1260" cy="280" r="2" fill="#b58cff"><animate attributeName="cx" values="1260;1040;1260" dur="9s" repeatCount="indefinite"/></circle><circle cx="1040" cy="170" r="2" fill="#61dafb"><animate attributeName="cy" values="170;60;170" dur="6s" repeatCount="indefinite"/></circle></g>
+  <path d="M0 350 C240 260 340 430 570 330 S940 230 1400 330" fill="none" stroke="url(#cyan)" stroke-opacity=".35" stroke-width="2"><animate attributeName="d" dur="8s" repeatCount="indefinite" values="M0 350 C240 260 340 430 570 330 S940 230 1400 330;M0 330 C230 410 350 240 570 350 S980 390 1400 270;M0 350 C240 260 340 430 570 330 S940 230 1400 330"/></path>
+  <g transform="translate(92 78)"><rect width="770" height="250" rx="18" fill="#0a1020" stroke="#5ee7ff" stroke-opacity=".45"/><circle cx="28" cy="25" r="6" fill="#ff5f57"/><circle cx="50" cy="25" r="6" fill="#febc2e"/><circle cx="72" cy="25" r="6" fill="#28c840"/><text x="28" y="72" fill="#8da2c8" font-family="monospace" font-size="18">natas@lab:~$</text><text x="170" y="72" fill="#fff" font-family="monospace" font-size="18">./enumerate --level 00-34</text><text x="28" y="118" fill="#62e6ff" font-family="monospace" font-size="19">[+] attack surface mapped</text><text x="28" y="155" fill="#9affc7" font-family="monospace" font-size="19">[+] 35 levels unlocked</text><text x="28" y="192" fill="#c6a0ff" font-family="monospace" font-size="19">[+] learn • exploit • defend</text><text x="28" y="225" fill="#fff" font-family="monospace" font-size="19">▮<animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></text></g>
+  <g transform="translate(940 112)"><text fill="#fff" font-family="Arial,sans-serif" font-weight="700" font-size="54">NATAS</text><text y="58" fill="url(#cyan)" font-family="Arial,sans-serif" font-weight="700" font-size="30">WRITEUP</text><text y="105" fill="#aab9d6" font-family="Arial,sans-serif" font-size="18">A bilingual web-security journey</text><text y="140" fill="#7282a8" font-family="monospace" font-size="15">levels 00 → 34  //  think like an attacker</text></g>
+</svg>
